@@ -1,0 +1,7 @@
+*.pyc
+.idea
+.python-version
+__pycache__
+gato_*
+node_modules
+package-lock.json
