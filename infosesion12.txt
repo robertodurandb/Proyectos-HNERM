@@ -8,6 +8,8 @@ Desde cmd ejecutar:
 6. npm install sqlite3 (para instalar base de datos sqlite y hacer pruebas, nota: para producción tiene que ser con mysql u otra db)
 7. npx sequelize-cli db:migrate (genera y guarda la estructura de la base de datos)
 8. Instalar npm install body-parser (sirve como midellware para nuestra app)
+9. Instalar npm install bcrypt ( sirve para encriptar contraseñas)
 
 TUTORIAL SEMANA12:
 - video s06 parte1: 02:24:00
+- video s06 parte1: 02:47
