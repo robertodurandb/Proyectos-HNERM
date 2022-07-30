@@ -7,6 +7,8 @@ dotEnv.config()
 const { ReactivoController } = require('./controllers/reactivo_controller')
 const { UserController } = require('./controllers/user_controller')
 
+const jwtMiddleware = require('./middlewares/jwt')
+
 let app = express();
 
 app.use(bodyParser.json())
