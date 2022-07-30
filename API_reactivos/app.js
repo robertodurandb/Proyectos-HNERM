@@ -1,5 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser') //importando el midellware
+const dotEnv = require('dotenv') //importando el entorno virtual secreto para las credenciales de la BD
+
+dotEnv.config()
 
 const { ReactivoController } = require('./controllers/reactivo_controller')
 const { UserController } = require('./controllers/user_controller')
@@ -18,8 +21,10 @@ app.get('/reactivo/:pk', ReactivoController.retrieve)
 app.put('/reactivo/:pk', ReactivoController.update)
 app.delete('/reactivo/:pk', ReactivoController.delete)
 
-app.post('/sign_up', UserController.create)
+app.post('/users', UserController.create)
+app.post('/login', UserController.login)
 
 app.listen(3000, ()=>{
     console.log('Servidor iniciado')
+    console.log(process.env.SECRET)
 })
