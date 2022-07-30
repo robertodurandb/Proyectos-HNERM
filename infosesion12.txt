@@ -13,3 +13,13 @@ Desde cmd ejecutar:
 TUTORIAL SEMANA12:
 - video s06 parte1: 02:24:00
 - video s06 parte1: 02:47
+user id 4: jvitate(123456)
+user id 1: root(LaFlorida)
+user id 2: admin(admin)
+
+- video s06 parte1: 03:09
+10. npm install dotenv
+
+- video s06 parte1: finalizado
+11. npm install jsonwebtoken
+-video s06 parte2: 00:34:40
