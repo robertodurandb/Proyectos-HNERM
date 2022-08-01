@@ -21,6 +21,7 @@ user id 2: admin(admin)
 10. npm install dotenv
 
 - video s06 parte1: finalizado
-
-
+11. npm install jsonwebtoken
+-video s06 parte2: 00:34:40
+-video s06 parte2: 00:40
 

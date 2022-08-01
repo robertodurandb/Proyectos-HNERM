@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 const { User } = require('../models')
 
 class UserController {
@@ -13,13 +14,18 @@ class UserController {
 
             bcrypt.compare(password, user.password, (err, result)=>{
                 if(result){
-                    res.send("Inicio de sesión exitoso")
+                    let payload = {
+                        id: user.id,
+                        username: user.username
+                    }
+                    const token = jwt.sign(payload, process.env.SECRET, {expiresIn: '1800s'})
+                    res.send({token: token})
                 } else{
-                    res.send("Ups, algo paso, vuelva a intentar")
+                    res.send("Ups.. algo paso, contraseña inválida")
                 }
             })
         }).catch((err)=>{
-            res.send("Ups, algo paso, usuario no existe")
+            res.send("Ups.. algo paso, usuario no existe")
         })
     }
 
