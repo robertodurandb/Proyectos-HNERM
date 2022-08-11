@@ -4,8 +4,9 @@ const dotEnv = require('dotenv') //importando el entorno virtual secreto para la
 
 dotEnv.config()
 
-const { ReactivoController } = require('./controllers/reactivo_controller')
+// const { ReactivoController } = require('./controllers/reactivo_controller')
 const { UserController } = require('./controllers/user_controller')
+const { ReagentController } = require('./controllers/reagent_controller')
 
 const jwtMiddleware = require('./middlewares/jwt')
 
@@ -17,11 +18,17 @@ app.get('/',(req, res) => {
     res.send('Hello World')
 })
 
-app.post('/reactivos', jwtMiddleware, ReactivoController.create)
-app.get('/reactivos', ReactivoController.list)
-app.get('/reactivo/:pk', ReactivoController.retrieve)
-app.put('/reactivo/:pk', jwtMiddleware, ReactivoController.update)
-app.delete('/reactivo/:pk', jwtMiddleware, ReactivoController.delete)
+// app.post('/reactivos', jwtMiddleware, ReactivoController.create)
+// app.get('/reactivos', ReactivoController.list)
+// app.get('/reactivo/:pk', ReactivoController.retrieve)
+// app.put('/reactivo/:pk', jwtMiddleware, ReactivoController.update)
+// app.delete('/reactivo/:pk', jwtMiddleware, ReactivoController.delete)
+
+app.post('/reagents', jwtMiddleware, ReagentController.create)
+app.get('/reagents', ReagentController.list)
+app.get('/reagent/:pk', ReagentController.retrieve)
+app.put('/reagent/:pk', jwtMiddleware, ReagentController.update)
+app.delete('/reagent/:pk', jwtMiddleware, ReagentController.delete)
 
 app.post('/users', jwtMiddleware, UserController.create)
 app.post('/login', UserController.login)
