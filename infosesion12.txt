@@ -27,4 +27,4 @@ user id 2: admin(admin)
 12.0 npx sequelize-cli model:generate --name Nombre --attributes nombre:tipo
 12. npx sequelize-cli migration:create --name add_area_id_to_reagents
 12.1 npx sequelize-cli db:migrate
--video s06 parte2: 01:18
+-video s06 parte2: 01:05

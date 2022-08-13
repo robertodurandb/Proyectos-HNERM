@@ -7,6 +7,7 @@ dotEnv.config()
 // const { ReactivoController } = require('./controllers/reactivo_controller')
 const { UserController } = require('./controllers/user_controller')
 const { ReagentController } = require('./controllers/reagent_controller')
+const { AreaController } = require('./controllers/area_controller')
 
 const jwtMiddleware = require('./middlewares/jwt')
 
@@ -29,6 +30,12 @@ app.get('/reagents', ReagentController.list)
 app.get('/reagent/:pk', ReagentController.retrieve)
 app.put('/reagent/:pk', jwtMiddleware, ReagentController.update)
 app.delete('/reagent/:pk', jwtMiddleware, ReagentController.delete)
+
+app.post('/areas', jwtMiddleware, AreaController.create)
+app.get('/areas', AreaController.list)
+app.get('/area/:pk', AreaController.retrieve)
+app.put('/area/:pk', jwtMiddleware, AreaController.update)
+app.delete('/area/:pk', jwtMiddleware, AreaController.delete)
 
 app.post('/users', jwtMiddleware, UserController.create)
 app.post('/login', UserController.login)
