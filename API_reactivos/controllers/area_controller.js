@@ -1,4 +1,4 @@
-const { Area } = require('../models') 
+const { Area, Reagent } = require('../models') 
 
 class AreaController {
     static create(req, res) {
@@ -39,6 +39,22 @@ class AreaController {
                     message: err.message
                 })
             })
+    }
+
+    static retrieve_by_area(req, res) {
+        let areaId = req.params.areaId
+
+        Reagent.findAll({
+            where: {areaId: areaId}
+        })
+        .then((result) =>{
+            res.status(200).send(result)
+        })
+        .catch((err) =>{
+            res.status(404).send({
+                message: err.message
+            })
+        })
     }
 
     static update(req, res) {
