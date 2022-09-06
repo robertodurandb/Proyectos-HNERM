@@ -28,4 +28,5 @@ user id 2: admin(admin)
 12. npx sequelize-cli migration:create --name add_area_id_to_reagents
 12.1 npx sequelize-cli db:migrate
 -video s06 parte2: 01:31
--video s06 parte3: 
+-video s06 parte3: 00:42
+npm install cors

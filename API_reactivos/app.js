@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser') //importando el midellware
 const dotEnv = require('dotenv') //importando el entorno virtual secreto para las credenciales de la BD
+const cors = require('cors')
 
 dotEnv.config()
 
@@ -13,6 +14,7 @@ const jwtMiddleware = require('./middlewares/jwt')
 let app = express();
 
 app.use(bodyParser.json())
+app.use(cors())
 
 app.get('/',(req, res) => {
     res.send('Hello World')
@@ -35,7 +37,7 @@ app.get('/area/:areaId/reagents', AreaController.retrieve_by_area)
 app.post('/users', jwtMiddleware, UserController.create)
 app.post('/login', UserController.login)
 
-app.listen(3000, ()=>{
+app.listen(8000, ()=>{
     console.log('Servidor iniciado')
     console.log(process.env.SECRET)
 })
